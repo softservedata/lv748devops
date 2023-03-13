@@ -13,6 +13,7 @@ on:
 
 env:
   NODEV: 16
+  MY_VAR: ${{ secrets.MY_SECRET }}
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -36,15 +37,11 @@ jobs:
           echo Add other actions to build
           echo test, and deploy your project.
 
-        env:
-          my_var: ${{ secrets.MY_SECRET }}
-          my_code: 16
-
       - name: Run a multi-line script with secret
         run: |
           echo my_var
-          echo ${{ env.my_var }}
-          echo ${{ env.my_code }}
+          echo ${{ env.MY_VAR }}
+          echo ${{ env.NODEV }}
 
       - name: Install NodeJS
         uses: actions/setup-node@v3
