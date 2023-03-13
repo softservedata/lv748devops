@@ -35,7 +35,7 @@ jobs:
 
         env:
           my_var: ${{ secrets.MY_SECRET }}
-          my_code: test_qwerty
+          my_code: 16
 
       - name: Run a multi-line script with secret
         run: |
@@ -46,7 +46,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ secrets.NODE_VERSION }}
+          node-version: ${{ env.my_code }}
 
       - name: Get node version
         run: "node --version"
