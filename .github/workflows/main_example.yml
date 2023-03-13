@@ -11,6 +11,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  NODEV: 16
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -46,7 +49,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.my_code }}
+          node-version: ${{ env.NODEV }}
 
       - name: Get node version
         run: "node --version"
