@@ -34,7 +34,7 @@ jobs:
           echo test, and deploy your project.
 
         env:
-          my_var: ${{ secrets.MY_SECRET }}
+          my_var: ${{ secrets.MY_SECRET }}_test
 
       - name: Run a multi-line script with secret
         run: |
