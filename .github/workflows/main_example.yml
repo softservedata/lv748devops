@@ -34,11 +34,11 @@ jobs:
           echo test, and deploy your project.
 
         env:
-          my_var: ${{ secrets.MY_SECRET }}_test
+          my_var: ${{ secrets.MY_SECRET }}
           my_code: test_qwerty
 
       - name: Run a multi-line script with secret
         run: |
           echo my_var
-          echo ${{ my_var }}
-          echo ${{ my_code }}
+          echo ${{ env.my_var }}
+          echo ${{ env.my_code }}
