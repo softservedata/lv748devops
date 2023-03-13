@@ -35,8 +35,10 @@ jobs:
 
         env:
           my_var: ${{ secrets.MY_SECRET }}_test
+          my_code: test_qwerty
 
       - name: Run a multi-line script with secret
         run: |
           echo my_var
-          echo $my_var
+          echo ${{ my_var }}
+          echo ${{ my_code }}
