@@ -42,3 +42,11 @@ jobs:
           echo my_var
           echo ${{ env.my_var }}
           echo ${{ env.my_code }}
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ secrets.NODE_VERSION }}
+
+      - name: Get node version
+        run: "node --version"
